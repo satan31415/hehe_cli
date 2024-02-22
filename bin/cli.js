@@ -1,5 +1,8 @@
-console.log(
-  '%c heh ---> ',
-  'background: #4285f4; font-size: 16px',
-  '测试cli'
-)
+#! /usr/bin/env node 
+const {program} = require('commander')
+const myhelp = require('../lib/core/help')
+myhelp(program)
+
+const mycommander = require('../lib/core/mycommander')
+mycommander(program)
+program.parse(process.argv)
